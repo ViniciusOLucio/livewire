@@ -13,7 +13,7 @@
             @endif
             <label for="title" class="form-label">Título</label>
             <input
-                wire:model="title"
+                wire:model.live="form.title"
                 type="text"
                 name="title"
                 id="title"
@@ -21,7 +21,7 @@
                 placeholder="Informe o título do post"
             >
 
-            @error('title')
+            @error('form.title')
             <span class="text-danger text"> {{ $message }}</span>
             @enderror
         </div>
@@ -30,7 +30,7 @@
         <div class="form-group mb-3">
             <label for="content" class="form-label">Conteúdo</label>
             <textarea
-                wire:model="content"
+                wire:model.live="form.content"
                 name="content"
                 id="content"
                 class="form-control"
@@ -38,7 +38,7 @@
                 placeholder="Digite o conteúdo do post"
             >
 </textarea>
-            @error('content')
+            @error('form.content')
             <span class="text-danger text"> {{ $message }}</span>
             @enderror
 
